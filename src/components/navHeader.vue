@@ -27,9 +27,9 @@
       <el-dropdown @command="handleClick">
         <div class="el-dropdown-link flex-box">
           <el-avatar
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+            :src="userInfo['avatar']"
           />
-          <p class="user-name">admin</p>
+          <p class="user-name">{{ userInfo.name }}</p>
         </div>
         <template #dropdown>
           <el-dropdown-menu>
@@ -49,9 +49,10 @@ const store = useStore();
 //当前的路由对象
 const route = useRoute();
 const router = useRouter();
-
 const selectMenu = computed(() => store.state.menu.selectMenu);
 
+const userInfo = JSON.parse(localStorage.getItem("pz_userinfo"));
+console.log(userInfo);
 //关闭tab
 const closeTab = (item, index) => {
   store.commit("closeMenu", item);
@@ -80,10 +81,10 @@ const handleClick = (command) => {
   if (command === "cancel") {
     localStorage.removeItem("pz_token");
     localStorage.removeItem("pz_userinfo");
+    localStorage.removeItem("pz_v3pz");
     window.location.href = window.location.origin;
   }
-  
-}
+};
 </script>
 
 <style lang="less" scoped>
