@@ -1,12 +1,18 @@
 <template>
   <div class="panel-heading">
     <div class="panel-lead">
-      <div class="title">菜单管理</div>
-      <p class="description"></p>
+      <div class="title">{{props.route.meta.name}}</div>
+      <p class="description">{{props.route.meta.describe}}</p>
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+const props = defineProps({
+  route:{
+    type:Object
+  }
+})
+</script>
 <style lang="less" scoped>
 .panel-heading {
   padding: 15px;
