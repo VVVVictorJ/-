@@ -14,82 +14,82 @@ const routes = [
     component: Layout,
     name: "main",
     children: [
-      {
-        path: "dashboard",
-        meta: {
-          id: "1",
-          name: "控制台",
-          icon: "Platform",
-          path: "/dashboard",
-          describe: "控制台",
-        },
-        component: Dashboard,
-      },
-      {
-        path: "auth",
-        meta: {
-          id: "2",
-          name: "权限管理",
-          icon: "Grid",
-        },
-        children: [
-          {
-            path: "",
-            alias: ["admin"],
-            meta: {
-              id: "1",
-              name: "控制台",
-              icon: "Avatar",
-              path: "/auth/admin",
-              describe: "管理员可进行编辑",
-            },
-            component: Admin,
-          },
-          {
-            path: "group",
-            meta: {
-              id: "2",
-              name: "菜单管理",
-              icon: "Menu",
-              path: "/auth/group",
-              describe: "菜单规则",
-            },
-            component: Group,
-          },
-        ],
-      },
-      {
-        path: "vppz",
-        meta: {
-          id: "3",
-          name: "陪诊",
-          icon: "Grid",
-        },
-        children: [
-          {
-            path: "staff",
-            meta: {
-              id: "1",
-              name: "陪护管理",
-              icon: "Checked",
-              path: "/vppz/staff",
-              describe: "陪诊管理",
-            },
-            component: Staff,
-          },
-          {
-            path: "order",
-            meta: {
-              id: "2",
-              name: "订单管理",
-              icon: "Menu",
-              path: "/vppz/order",
-              describe: "订单管理",
-            },
-            component: Order,
-          },
-        ],
-      },
+      // {
+      //   path: "dashboard",
+      //   meta: {
+      //     id: "1",
+      //     name: "控制台",
+      //     icon: "Platform",
+      //     path: "/dashboard",
+      //     describe: "控制台",
+      //   },
+      //   component: Dashboard,
+      // },
+      // {
+      //   path: "auth",
+      //   meta: {
+      //     id: "2",
+      //     name: "权限管理",
+      //     icon: "Grid",
+      //   },
+      //   children: [
+      //     {
+      //       path: "",
+      //       alias: ["admin"],
+      //       meta: {
+      //         id: "1",
+      //         name: "控制台",
+      //         icon: "Avatar",
+      //         path: "/auth/admin",
+      //         describe: "管理员可进行编辑",
+      //       },
+      //       component: Admin,
+      //     },
+      //     {
+      //       path: "group",
+      //       meta: {
+      //         id: "2",
+      //         name: "菜单管理",
+      //         icon: "Menu",
+      //         path: "/auth/group",
+      //         describe: "菜单规则",
+      //       },
+      //       component: Group,
+      //     },
+      //   ],
+      // },
+      // {
+      //   path: "vppz",
+      //   meta: {
+      //     id: "3",
+      //     name: "陪诊",
+      //     icon: "Grid",
+      //   },
+      //   children: [
+      //     {
+      //       path: "staff",
+      //       meta: {
+      //         id: "1",
+      //         name: "陪护管理",
+      //         icon: "Checked",
+      //         path: "/vppz/staff",
+      //         describe: "陪诊管理",
+      //       },
+      //       component: Staff,
+      //     },
+      //     {
+      //       path: "order",
+      //       meta: {
+      //         id: "2",
+      //         name: "订单管理",
+      //         icon: "Menu",
+      //         path: "/vppz/order",
+      //         describe: "订单管理",
+      //       },
+      //       component: Order,
+      //     },
+      //   ],
+      // },
     ],
   },
   {
