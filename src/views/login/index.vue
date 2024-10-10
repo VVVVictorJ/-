@@ -53,7 +53,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, computed,toRaw } from "vue";
 import { getCode, userAuthentication,login, menuPermissions} from "../../api";
 import { UserFilled, Lock } from "@element-plus/icons-vue";
 import { ElMessage } from "element-plus";
@@ -170,6 +170,9 @@ const submitForm = async (formEl) => {
             menuPermissions().then(({data}) => {
               store.commit('dynamicMenu', data.data)
               console.log(routerList)
+              toRaw(routerList.value).forEach(item => {
+                router.addRoute('main', item)
+              });
             })
             router.push('/')
           }
